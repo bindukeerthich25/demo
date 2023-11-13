@@ -1,57 +1,117 @@
-import { Container,Paper, Typography } from '@mui/material';
+import { Avatar, Card, CardContent, Container,Grid,Paper, Typography } from '@mui/material';
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 
 import img1 from './maintpage.png';
-import { padding } from '@mui/system';
+import { Box, padding } from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    position: 'relative',
-    left: '10%',
-    top: '60%',
+  
+   
     transform: 'translate(-50%, -50%)',
     textAlign: 'center',
     marginTop: '100px',
     marginRight:'240px',
+    display:'flex',
+    flexDirection:'row',
   },
   image: {
     maxWidth: '700px',
-    position: 'absolute',
-    left: '80px',
-    marginTop:'200px'
+    
+    marginTop:'200px',
   },
   title: {
     fontSize: '50px',
     textAlign:'right',
     marginRight: '900px',  
-
   },
-  
   subTitle: {
     fontSize: '30px',
     margin: '10px',
-
-
   },
 }));
-
 const Maintenancepge = () => {
   const classes = useStyles();
-
   return (
-    <Container className={classes.container}>
-      <img src={img1} className={classes.image} alt="Maintenance" />
-      <Paper>
-        <Typography variant="h2" className={classes.title}>
-          We are doing some maintenance.!!
-        </Typography>
-        <Typography variant="body1" className={classes.subTitle}>
-          We will be back soon!!!
-        </Typography>
-      </Paper>
-    </Container>
-  );
+  
+  <Grid
+      container
+      justifyContent="center"
+      alignItems="center"
+      style={{
+        height: '100vh',
+      }}
+    >
+      <Grid item xs={12} sm={8}>
+        <Card className={classes.mainCard} variant="outlined">
+          <Typography
+            variant="h3"
+            sx={{ marginTop: '100px', textAlign: 'center', fontFamily: 'Geogria',color:'darkblue'}}
+          >
+            Under maintenance
+          </Typography>
+          <CardContent className={classes.cardContent}>
+            <Box
+              className={classes.box}
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+              }}
+            >
+              <Card
+                variant="outlined"
+                sx={{
+                  flex: 1,
+                  borderRadius: '16px',
+                  marginRight: '5rem',
+                  justifyContent: 'Center',
+                  alignContent: 'center',
+                  
+                  maxHeight: '650px',
+                  maxWidth: '800px',
+                  textAlign:'right', 
+                }}
+              >
+                <CardContent style={{}}>
+                  <Avatar
+                    className={classes.img}
+                    alt="Admin"
+                    src={img1}
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '16px',
+                      justifyContent: 'center',
+                      display: 'flex',
+                      objectFit: 'contain',  
+                    }}
+                  />
+                </CardContent>
+              </Card>
+              <Paper
+                className={classes.paper}
+                sx={{
+                  color: 'darkblue',
+                  padding: '2rem',
+                  flex: 1,
+                  borderRadius: '16px',
+                  elevation: '0',
+                  marginTop:'200px'
+                }}
+              ><Typography variant="h4" className={classes.title}>
+                       We are doing some maintenance.!!
+                     </Typography>
+                     <Typography variant="body1" className={classes.subTitle}>
+                      We will be back soon!!!
+                     </Typography>
+               </Paper>  
+            </Box>
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
+  )
 };
 
 export default Maintenancepge;

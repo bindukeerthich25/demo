@@ -44,12 +44,12 @@ const Maintenancepge = () => {
       }}
     >
       <Grid item xs={12} sm={8}>
-        <Card className={classes.mainCard} variant="outlined">
+        <Card className={classes.mainCard} >
           <Typography
             variant="h3"
             sx={{ marginTop: '100px', textAlign: 'center', fontFamily: 'Geogria',color:'darkblue'}}
           >
-            Under maintenance
+           Page Under maintenance
           </Typography>
           <CardContent className={classes.cardContent}>
             <Box
@@ -60,7 +60,7 @@ const Maintenancepge = () => {
               }}
             >
               <Card
-                variant="outlined"
+                
                 sx={{
                   flex: 1,
                   borderRadius: '16px',
@@ -96,15 +96,13 @@ const Maintenancepge = () => {
                   padding: '2rem',
                   flex: 1,
                   borderRadius: '16px',
-                  elevation: '0',
+                  
                   marginTop:'200px'
                 }}
               ><Typography variant="h4" className={classes.title}>
                        We are doing some maintenance.!!
                      </Typography>
-                     <Typography variant="body1" className={classes.subTitle}>
-                      We will be back soon!!!
-                     </Typography>
+                    
                </Paper>  
             </Box>
           </CardContent>
